@@ -20,6 +20,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     #url(r'^posts/$', "<appname>.views.<function_name>"),
-    url(r'^posts/', include("blog.urls")),
+    url(r'^posts/', include("blog.urls", namespace='posts')),
 
 ]

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+<style media="screen">
+{% block style%}
+body {
+width: 100%;
+margin: auto;
+}
+h1, p, h4 {
+text-align: center;
+}
+p{
+font-size: 30px;
+}
+{% endblock style %}
+</style>
+
+{% block content %}
+
+    <div class="post_create">
+    <h1 style="font-size: 50px">Form</h1>
+    <form method="POST"> {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" name="" value="create post"/>
+    </form>
+
+    </div>
+
+{% endblock content %}

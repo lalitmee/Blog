@@ -5,10 +5,10 @@ from . import views
 
 urlpatterns = [
     #url(r'^posts/$', "<appname>.views.<function_name>"),
-    url(r'^$', "blog.views.post_list"),
+    url(r'^$', "blog.views.post_list", name='list'),
     url(r'^create/$', "blog.views.post_create"),
-    url(r'^detail/$', "blog.views.post_detail"),
-    url(r'^update/$', "blog.views.post_update"),
-    url(r'^delete/$', "blog.views.post_delete"),
+    url(r'^(?P<id>\d+)/$', "blog.views.post_detail", name='detail'),
+    url(r'^(?P<id>\d+)/edit/$', "blog.views.post_update", name='update'),
+    url(r'^^(?P<id>\d+)/delete/$', "blog.views.post_delete"),
 
 ]

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block head_title %} {{ block.super }}{% endblock head_title %}
+
+<style media="screen">
+{% block style%}
+body {
+  width: 100%;
+  margin: auto;
+}
+  h1, p, h4 {
+    text-align: center;
+  }
+  p{
+    font-size: 30px;
+  }
+{% endblock style %}
+</style>
+</head>
+<body>
+<div class="container">
+  {% if messages %}
+  <div class="message">
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+</div>
+{% endif %}
+  {% block content%}
+  <h1 class="jumbotron" style="font-size: 50px">{{ title }} of the Posts</h1>
+  {% for obj in objects_list%}
+  <div class="well">
+    <h1>{{ obj.id }}</h1>
+    <h1><a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a></h1>
+    <p>{{ obj.content }}</p>
+    <h4>{{ obj.timestamp }}</h4>
+    <h4>{{ obj.updated }}</h4>
+  </div>
+  {% endfor %}
+  </div>
+  {% endblock content %}
