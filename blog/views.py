@@ -12,7 +12,7 @@ def post_create(request):
         instance.save()
         messages.success(request, "Successfully Created")
         return HttpResponseRedirect(instance.get_absolute_url())
-    
+
     context = {
         "form" : form,
     }
@@ -57,5 +57,5 @@ def post_update(request, id=None):
 def post_delete(request, id=None):
     instance = get_object_or_404(Post, id=id)
     instance.delete()
-    message.success(request, "Successfully Deleted")
+    messages.success(request, "Successfully Deleted")
     return redirect("posts:list")

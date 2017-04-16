@@ -1,31 +1,21 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 {% block head_title %}{{ instance.title }} | {{ block.super }}{% endblock head_title %}
 
 
 <style media="screen">
 {% block style%}
-body {
-width: 100%;
-margin: auto;
-}
-h1, p, h4 {
-text-align: center;
-}
 
-p{
-font-size: 30px;
-}
 {% endblock style %}
 </style>
 {% block content %}
-    <h1 class="jumbotron" style="font-size: 50px">{{ title }} </h1>
+<div class="col-sm-8 col-sm-offset-2">
+    <h1 >{{ title }} <small>{{ instance.timestamp }}</small></h1>
     <div class="well">
-      <h1>{{ instance.id }}</h1>
-      <h1>{{ instance.title }}</h1>
-      <p>{{ instance.content }}</p>
-      <h4>{{ instance.timestamp }}</h4>
-      <h4>{{ instance.updated }}</h4>
+      <p>{{ instance.content | linebreaks }}</p>
+
+    </div>
+
     </div>
 
 {% endblock content %}
