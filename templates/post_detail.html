@@ -38,8 +38,8 @@
       Linkedin
       </a>-->
       <div class="row">
-        <div class="col-sm-12">
-          <p>{{ instance.content | linebreaks }}</p>
+        <div class="col-sm-12 ">
+          <div class="post-detail-item ">{{ instance.get_markdown }}</div>
           <hr>
           <br>
           <div class="fb-comments" data-href="{{ request.build_absolute_uri }}"
