@@ -38,9 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pagedown',
+    'crispy_forms',
     'markdown_deux',
     'blog',
 ]
+
+CRISPY_TEMPELATE_PACK = 'bootstrap3'
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',

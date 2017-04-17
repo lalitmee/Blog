@@ -36,7 +36,7 @@
         {% endif %}
         <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><small> {{ obj.publish}} </small>
           {% if obj.user.get_full_name %}<p><small>Author : {{ obj.user.get_full_name }}</small></p> {% endif %}
-        </h3>  {{ obj.get_markdown  }}
+        </h3>  {{ obj.get_markdown | truncatechars_html:200 }}
         <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">View</a></p>
       </div>
     </div>
