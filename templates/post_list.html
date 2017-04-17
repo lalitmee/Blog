@@ -15,6 +15,10 @@
   <div class="col-sm-8 col-sm-offset-2">
 
   <h1>{{ title }} of the Posts</h1>
+  <form class="" action="" method="GET">
+    <input type="text" placeholder="Search for the post" name="q" value="{{ request.GET.q }}">
+    <input type="submit" name="" value="Search">
+  </form>
 
   {% for obj in objects_list%}
   <div class="row">
@@ -24,7 +28,13 @@
     <img src="{{ obj.image.url }}" class="img-responsive" alt="">
     {% endif %}
       <div class="caption">
-        <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><small> {{ obj.publish | timesince}} ago</small>
+        {% if obj.draft %}
+        <h3>Staff Only : Draft</h3>
+        {% endif %}
+        {% if obj.publish > today %}
+        <h3>Staff Only : Future Post</h3>
+        {% endif %}
+        <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><small> {{ obj.publish}} </small>
           {% if obj.user.get_full_name %}<p><small>Author : {{ obj.user.get_full_name }}</small></p> {% endif %}
         </h3><p>  {{ obj.content | linebreaks | truncatechars:120 }}</p>
         <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">View</a></p>
@@ -38,7 +48,8 @@
   <div class="pagination">
     <span class="step-links">
         {% if objects_list.has_previous %}
-            <a href="?{{ page_request_var }}={{ objects_list.previous_page_number }}">previous</a>
+            <a href="?{{ page_request_var }}={{ objects_list.previous_page_number }}{% if request.GET.q %}
+            &q={{ request.GET.q }} {% endif %}">previous</a>
         {% endif %}
 
         <span class="current">
@@ -46,7 +57,8 @@
         </span>
 
         {% if objects_list.has_next %}
-            <a href="?{{ page_request_var }}={{ objects_list.next_page_number }}">next</a>
+            <a href="?{{ page_request_var }}={{ objects_list.next_page_number }}{% if request.GET.q %}
+            &q={{ request.GET.q }} {% endif %}">next</a>
         {% endif %}
     </span>
 </div>
