@@ -15,12 +15,21 @@
   <div class="col-sm-8 col-sm-offset-2">
 
   <h1>{{ title }} of the Posts</h1>
-  <form class="" action="" method="GET">
-    <input type="text" placeholder="Search for the post" name="q" value="{{ request.GET.q }}">
-    <input type="submit" name="" value="Search">
+  <form class="row" action="" method="GET">
+    <div class="col-sm-6">
+      <div class="input-group">
+        <input class="form-control" type="text" placeholder="Search for the post" name="q" value="{{ request.GET.q }}">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i>
+</button>
+        </span>
+
+      </div>
+
+    </div>
   </form>
 
-  {% for obj in objects_list%}
+  {% for obj in objects_list %}
   <div class="row">
   <div class="col-sm-12 ">
     <div class="thumbnail">

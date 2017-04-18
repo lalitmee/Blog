@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load urlify %}
+{% load crispy_forms_tags %}
 {% load staticfiles %}
 {% block head_title %}{{ instance.title }} | {{ block.super }}{% endblock head_title %}
 
@@ -11,7 +12,7 @@
 </style>
 {% block content %}
 <div class="container">
-<div class="col-sm-8 col-sm-offset-2">
+<div class="col-sm-6 col-sm-offset-3">
   {% if instance.image %}
 <img src="{{ instance.image.url }}" class="img-responsive" alt="">
 {% endif %}
@@ -40,15 +41,29 @@
       <div class="row">
         <div class="col-sm-12 ">
           <div class="post-detail-item ">{{ instance.get_markdown }}</div>
-          <hr>
-          <br>
-          <div class="fb-comments" data-href="{{ request.build_absolute_uri }}"
-          data-numposts="5"></div>
+          <hr/>
+          <br/>
+          <div>
+            <p class="lead">Comments</p>
+            <form class="" action="." method="POST"> {% csrf_token %}
+                {{ comment_form|crispy }}
+                <input class="btn btn-default" type="submit" name="" value="Post comment">
+            </form>
+            <hr>
+          {% for comment in comments %}
+            <blockquote class="blockquote">
+            <p class="mb-0">{{ comment.content }}</p>
+            <footer class="blockquote-footer">
+              via {{ comment.user }} | {{ comment.timestamp| timesince }}
+            </footer>
 
+          </blockquote>
+            <hr/>
+            {% endfor %}
+           </div>
       </div>
-
     </div>
-
-    </div>
+  </div>
+</div>
 </div>
 {% endblock content %}
