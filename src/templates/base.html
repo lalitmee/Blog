@@ -95,6 +95,11 @@ integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/
         setTitle(newContent)
       })
 
+      $(".comment-reply-btn").click(function (event) {
+        event.preventDefault();
+        $(this).parent().next(".comment-reply").fadeToggle();
+      })
+
 
      })
   </script>
