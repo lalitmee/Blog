@@ -14,18 +14,22 @@
   {% block content%}
   <div class="col-sm-8 col-sm-offset-2">
 
-  <h1>{{ title }} of the Posts</h1>
+  <h1>{{ title }}</h1>
   <form class="row" action="" method="GET">
-    <div class="col-sm-6">
+    <div class="col-sm-8">
       <div class="input-group">
-        <input class="form-control" type="text" placeholder="Search for the post" name="q" value="{{ request.GET.q }}">
+        <input class="form-control"
+        type="text"
+        placeholder="Search for the post"
+        name="q" value="{{ request.GET.q }}">
         <span class="input-group-btn">
-          <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i>
-</button>
+          <button class="btn btn-default"
+          type="submit">Search <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
         </span>
 
       </div>
-
+      <hr/>
     </div>
   </form>
 
@@ -43,9 +47,9 @@
         {% if obj.publish > today %}
         <h3>Staff Only : Future Post</h3>
         {% endif %}
-        <h3><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><small> {{ obj.publish}} </small>
+        <h1><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><small> {{ obj.publish}} </small>
           {% if obj.user.get_full_name %}<p><small>Author : {{ obj.user.get_full_name }}</small></p> {% endif %}
-        </h3>  {{ obj.get_markdown | truncatechars_html:200 }}
+        </h1>  {{ obj.get_markdown | truncatechars_html:200 }}
         <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">View</a></p>
       </div>
     </div>

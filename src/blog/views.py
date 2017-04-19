@@ -22,7 +22,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
 from comments.models import Comment
-from .utils import get_read_time
+
 
 # Create your views here.
 
@@ -51,14 +51,12 @@ def post_detail(request, slug=None):
             raise Http404
     share_string = quote_plus(instance.content)
 
-    #print(get_read_time(instance.content))
-    print(get_read_time(instance.get_markdown()))
     initial_data = {
             "content_type": instance.get_content_type,
             "object_id" : instance.id,
     }
     form = CommentForm(request.POST or None, initial=initial_data)
-    if form.is_valid():
+    if form.is_valid() and request.user.is_authenticated():
         c_type = form.cleaned_data.get("content_type")
         content_type = ContentType.objects.get(model=c_type)
         obj_id = form.cleaned_data.get("object_id")
@@ -121,7 +119,7 @@ def post_list(request):
         queryset = paginator.page(paginator.num_pages)
     context = {
         "objects_list" : queryset,
-        "title" : "List",
+        "title" : "Posts",
         "page_request_var": page_request_var,
         "today": today,
     }

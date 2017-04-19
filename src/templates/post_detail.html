@@ -4,7 +4,9 @@
 {% load staticfiles %}
 {% block head_title %}{{ instance.title }} | {{ block.super }}{% endblock head_title %}
 
-
+{% block post_detail_link %}
+<li><a href="{{ instance.get_absolute_url }}">{{ instance.title }}</a></li>
+{% endblock %}
 <style media="screen">
 {% block style%}
 
@@ -16,7 +18,20 @@
   {% if instance.image %}
 <img src="{{ instance.image.url }}" class="img-responsive" alt="">
 {% endif %}
-    <h1 >{{ title }} <small>{% if instance.draft %}<span style="color:red;">Draft </span>{% endif %}{{ instance.publish }}</small></h1>
+    <h1 >{{ title }}
+      <small>{% if instance.draft %}
+        <span style="color:red;">Draft </span>
+        {% endif %}{{ instance.publish }}
+        <small>
+          <p>Read Time : {% if instance.read_time <= 1 %} < 1 minute
+            {% else %}
+            {{ instance.read_time }}
+            minutes
+            {% endif %}
+          </p>
+        </small>
+      </small>
+      </h1>
     {% if instance.user.get_full_name %}
     <p><b>Author : {{ instance.user.get_full_name }}</b></p>
     {% endif %}
@@ -45,10 +60,14 @@
           <br/>
           <div>
             <p class="lead">Comments</p>
-            <form class="" action="." method="POST"> {% csrf_token %}
+            {% if request.user.is_authenticated %}
+            <form action="." method="POST"> {% csrf_token %}
                 {{ comment_form|crispy }}
                 <input class="btn btn-default" type="submit" name="" value="Post comment">
             </form>
+            {% else %}
+            <p>You must login to comment</p>
+            {% endif %}
             <hr>
           {% for comment in comments %}
             <blockquote class="blockquote">
@@ -73,12 +92,15 @@
               </footer>
             </blockquote>
             {% endfor %}
-
+            {% if request.user.is_authenticated %}
               <form class="" action="." method="POST"> {% csrf_token %}
                   {{ comment_form|crispy }}
                   <input type="hidden" name="parent_id" value="{{ comment.id }}">
                   <input class="btn btn-default" type="submit" name="" value="Reply">
               </form>
+              {% else %}
+              <p>You must login to comment</p>
+              {% endif %}
             </div>
 
 

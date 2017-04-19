@@ -1,3 +1,7 @@
+body {
+  background: rgb(204, 246, 198);
+}
+
 .wmd-panel{
   margin-left: 0px !important;
   margin-right: 0px !important;
@@ -5,4 +9,14 @@
 
 .comment-reply {
     display: none;
+}
+
+h1{
+  font-family: 'Rubik', sans-serif;
+  font-size: 40px;
+}
+
+p{
+  font-family: 'Cabin', sans-serif;
+  font-size: 20px;
 }
