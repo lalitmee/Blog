@@ -1,5 +1,5 @@
 body {
-  background: rgb(204, 246, 198);
+  background: rgb(45, 184, 244);
 }
 
 .wmd-panel{
@@ -11,6 +11,15 @@ body {
     display: none;
 }
 
+.navbar {
+  font-family: 'Pacifico', cursive;
+  font-size: 25px;
+}
+
+.navbar .navbar-brand {
+  font-size: 30px;
+}
+
 h1{
   font-family: 'Rubik', sans-serif;
   font-size: 40px;
@@ -19,4 +28,14 @@ h1{
 p{
   font-family: 'Cabin', sans-serif;
   font-size: 20px;
+}
+
+.col-sm-10{
+  background-color: white;
+}
+
+.head{
+  font-size: 70px;
+  text-align: center;
+  color: rgb(235, 39, 97);
 }

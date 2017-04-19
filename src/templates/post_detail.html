@@ -14,7 +14,8 @@
 </style>
 {% block content %}
 <div class="container">
-<div class="col-sm-6 col-sm-offset-3">
+<div class="col-sm-10 col-sm-offset-1">
+  <hr/>
   {% if instance.image %}
 <img src="{{ instance.image.url }}" class="img-responsive" alt="">
 {% endif %}
@@ -40,19 +41,7 @@
     data-show-faces="true" data-share="true"></div></p>
     <hr>
     <div>
-      <!--
-      <p>
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">
-      Facebook
-      </a>
-      <a href="https://twitter.com/home?status={{ share_string }}%20
-      {{ request.build_absolute_uri }}">
-      Twitter
-      </a>
-      <a href='https://plus.google.com/share?url={{ request.build_absolute_uri }}'>
-      <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ instance.title }}&summary={{ share_string }}&source={{ request.build_absolute_uri }}">
-      Linkedin
-      </a>-->
+
       <div class="row">
         <div class="col-sm-12 ">
           <div class="post-detail-item ">{{ instance.get_markdown }}</div>
