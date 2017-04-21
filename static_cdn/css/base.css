@@ -1,5 +1,5 @@
 body {
-  background: rgb(45, 184, 244);
+  
 }
 
 .wmd-panel{
@@ -12,7 +12,7 @@ body {
 }
 
 .navbar {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Lora', serif;
   font-size: 25px;
 }
 
@@ -21,12 +21,12 @@ body {
 }
 
 h1{
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Lora', serif;
   font-size: 40px;
 }
 
 p{
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Lora', serif;
   font-size: 20px;
 }
 
@@ -46,7 +46,7 @@ p{
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Lora', serif;
   height: 320px;
 
 	padding: 55px 50px;
@@ -70,13 +70,13 @@ p{
 
 .footer-distributed h3{
 	color:  #ffffff;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Lora', serif;
 	margin: 0;
 }
 
 .footer-distributed h3 span{
 	color:  #5383d3;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lora', serif;
 }
 
 /* Footer links */
@@ -85,7 +85,7 @@ p{
 	color:  #ffffff;
 	margin: 20px 0 12px;
 	padding: 0;
-  font-family: 'Roboto', sans-serif;
+ font-family: 'Lora', serif;
 }
 
 .footer-distributed .footer-links a{
@@ -93,13 +93,13 @@ p{
 	line-height: 1.8;
 	text-decoration: none;
 	color:  inherit;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lora', serif;
 }
 
 .footer-distributed .footer-company-name{
 	color:  #8f9296;
 	font-size: 14px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Lora', serif;
 	margin: 0;
 }
 
@@ -126,7 +126,7 @@ p{
 .footer-distributed .footer-center i.fa-envelope{
 	font-size: 17px;
 	line-height: 38px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lora', serif;
 }
 
 .footer-distributed .footer-center p{
@@ -134,12 +134,12 @@ p{
 	color: #ffffff;
 	vertical-align: middle;
 	margin:0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lora', serif;
 }
 
 .footer-distributed .footer-center p span{
 	display:block;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Lora', serif;
 	font-size:14px;
 	line-height:2;
 }
@@ -160,7 +160,7 @@ p{
 	line-height: 20px;
 	color:  #92999f;
 	font-size: 13px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Lora', serif;
 	margin: 0;
 }
 
@@ -168,7 +168,7 @@ p{
 	display: block;
 	color:  #ffffff;
 	font-size: 14px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Lora', serif;
 	margin-bottom: 20px;
 }
 
@@ -183,7 +183,7 @@ p{
 	cursor: pointer;
 	background-color:  #33383b;
 	border-radius: 2px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lora', serif;
 
 	font-size: 20px;
 	color: #ffffff;
@@ -199,7 +199,7 @@ p{
 @media (max-width: 880px) {
 
 	.footer-distributed{
-		font-family: 'Roboto', sans-serif;
+		font-family: 'Lora', serif;
 	}
 
 	.footer-distributed .footer-left,
@@ -219,7 +219,7 @@ p{
 
 
 .karma{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lora', serif;
   color: #1b3039;
   padding-left: 70px;
 
