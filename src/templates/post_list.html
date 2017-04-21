@@ -14,7 +14,7 @@
   {% block content%}
   <div class="col-sm-8 col-sm-offset-2">
 
-  <h1 class="head">{{ title }}</h1>
+  
   <form class="row" action="" method="GET">
     <div class="col-sm-8 col-sm-offset-2">
       <div class="input-group">
@@ -24,7 +24,7 @@
         name="q" value="{{ request.GET.q }}">
         <span class="input-group-btn">
           <button class="btn btn-default"
-          type="submit">Search <i class="fa fa-search" aria-hidden="true"></i>
+          type="submit" style="font-weight: 50px">Search <i class="fa fa-search" aria-hidden="true"></i>
         </button>
         </span>
       </div>
@@ -53,7 +53,7 @@
           </p>
           {% endif %}
         </h1>  {{ obj.get_markdown | truncatechars_html:200 }}
-        <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">View</a></p>
+        <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">View More</a></p>
       </div>
     </div>
     <hr>

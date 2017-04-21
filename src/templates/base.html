@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
     integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    <link href="https://fonts.googleapis.com/css?family=Cabin|Inconsolata|Nunito|Nunito+Sans|Pacifico|Quicksand|Rubik|VT323" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='stylesheet' href='{% static "css/base.css" %}' />
@@ -37,7 +37,7 @@
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand " href="{% url "posts:list" %}">Blog Home</a>
+            <a class="navbar-brand " href="{% url "posts:list" %}" style="color: black">Blog Home</a>
           </div>
           <ul class="nav navbar-nav">
 
@@ -48,15 +48,16 @@
              <ul class="nav navbar-nav navbar-right">
             {% if not request.user.is_authenticated %}
 
-            <li><a href="{% url "register" %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="{% url "login" %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="{% url "register" %}"><span class="glyphicon glyphicon-user" style="color: black"></span> Sign Up</a></li>
+            <li><a href="{% url "login" %}"><span class="glyphicon glyphicon-log-in" style="color: black"></span> Login</a></li>
             {% else %}
-            <li><a href="{% url "logout" %}">Logout</a></li>
+            <li><a href="{% url "logout" %}" style="color: black">Logout</a></li>
             {% endif %}
           </ul>
 
         </div>
       </nav>
+      <hr/>
 
       {% block content%}
 
@@ -127,4 +128,54 @@
      })
   </script>
   </body>
+  <footer class="footer-distributed">
+
+			<div class="footer-left">
+
+
+
+				<p class="footer-company-name">Lalit Kumar &copy; 2017</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p>IIIT Vadodara<span> Gandhinagar, Gujarat</span></p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+919712618438</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope" aria-hidden="true"></i>
+					<p><a href="mailto:lalitkumar.meena.lk@gmail.com">lalitkumar.meena.lk@gmail.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<strong style="font-size: 20px">About Myself</strong>
+          <br/>
+          <br/>
+					I am a student of IIIT Vadodara, Gandhinagar, Gujarat. I believe that
+          " ThE FutURe bElonGs to those who bElieve in thEir beAutiFul DREAMS....."
+				</p>
+
+				<div class="footer-icons">
+
+					<a href="https://www.facebook.com/profile.php?id=100004428344426"><i class="fa fa-facebook"></i></a>
+					<a href="https://twitter.com/lalitkumarmee10"><i class="fa fa-twitter"></i></a>
+					<a href="https://www.linkedin.com/in/lalitmee/"><i class="fa fa-linkedin"></i></a>
+					<a href="https://github.com/lalitmee"><i class="fa fa-github"></i></a>
+
+				</div>
+
+			</div>
+
+		</footer>
 </html>
