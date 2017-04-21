@@ -10,10 +10,10 @@
 
 {% block content %}
 <div class="container">
-<div class="col-sm-10 col-sm-offset-1">
+<div class="col-sm-10 col-sm-offset-2">
   <hr/>
   {% if instance.image %}
-<img src="{{ instance.image.url }}" class="img-responsive" alt="">
+&nbsp<img src="{{ instance.image.url }}" class="img-responsive" alt="">
 {% endif %}
     <h1 >{{ title }}
       <small>{% if instance.draft %}
@@ -39,7 +39,7 @@
     <div>
 
       <div class="row">
-        <div class="col-sm-12 ">
+        <div class="col-sm-10  ">
           <div class="post-detail-item ">{{ instance.get_markdown }}</div>
           <hr/>
           <br/>
