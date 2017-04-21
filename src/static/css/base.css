@@ -30,6 +30,10 @@ p{
   font-size: 20px;
 }
 
+.post-detail-item{
+    text-align: justify;
+    text-justify: inter-word;
+}
 .col-sm-10{
   background-color: white;
 }
