@@ -46,17 +46,16 @@
         {% if obj.publish > today %}
         <h3>Staff Only : Future Post</h3>
         {% endif %}
-        <h1><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><small> {{ obj.publish }} </small>
-          {% if obj.user.get_full_name %}
-          <p>
-            <small> Author : {{ obj.user.get_full_name }}</small>
-          </p>
-          {% endif %}
-        </h1>  {{ obj.get_markdown | truncatechars_html:200 }}
+        <h1><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><small> {{ obj.publish }} </small> </h1> 
+
+           {% if obj.user.get_full_name %}
+           <p>Author: {{ obj.user.get_full_name }}</p>
+           {% endif %}
+        {{ obj.get_markdown | truncatechars_html:200 }}
         <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">View More</a></p>
       </div>
     </div>
-    <hr>
+    <hr/>
   </div>
 </div>
   {% endfor %}
