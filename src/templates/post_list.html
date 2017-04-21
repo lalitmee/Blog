@@ -43,7 +43,7 @@
         {% if obj.draft %}
         <h3>Staff Only : Draft</h3>
         {% endif %}
-        {% if obj.publish > today %}
+        {% if obj.publish < today %}
         <h3>Staff Only : Future Post</h3>
         {% endif %}
         <h1><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><small> {{ obj.publish }} </small> </h1> 

@@ -11,7 +11,7 @@
 <div class="col-sm-10 col-sm-offset-2">
   <hr/>
   {% if instance.image %}
-&nbsp<img src="{{ instance.image.url }}" class="img-responsive" alt="">
+<img src="{{ instance.image.url }}" class="img-responsive" alt="">
 {% endif %}
     <h1 >{{ title }}
       <small>{% if instance.draft %}
@@ -28,7 +28,7 @@
       </small>
       </h1>
     {% if instance.user.get_full_name %}
-    <p><b>Author : {{ instance.user.get_full_name }}</b></p>
+    <p>Author : {{ instance.user.get_full_name }}</p>
     {% endif %}
     <p><div class="fb-like" data-href="{{ request.build_absolute_uri }}"
     data-layout="button_count" data-action="like" data-size="small"
