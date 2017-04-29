@@ -43,16 +43,16 @@
         {% if obj.draft %}
         <h3>Staff Only : Draft</h3>
         {% endif %}
-        {% if obj.publish < today %}
-        <h3>Staff Only : Future Post</h3>
-        {% endif %}
-        <h1><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><small> {{ obj.publish }} </small> </h1> 
+        <h1><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><small> {{ obj.publish }} </small> 
 
            {% if obj.user.get_full_name %}
-           <p>Author: {{ obj.user.get_full_name }}</p>
+           <p><strong>Author</strong> : {{ obj.user.get_full_name }}</p>
            {% endif %}
+           </h1> 
+           <hr/>
         {{ obj.get_markdown | truncatechars_html:200 }}
-        <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">View More</a></p>
+        <hr/>
+        <p><a href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">Read More</a></p>
       </div>
     </div>
     <hr/>
